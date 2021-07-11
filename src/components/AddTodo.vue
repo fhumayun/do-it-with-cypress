@@ -1,6 +1,6 @@
 <template>
   <div class="new-todo">
-    <input v-model.trim="newTodo" data-testid="new-todo" />
+    <input autofocus v-model.trim="newTodo" ref="newTodoInput" data-testid="new-todo" />
     <button @click="addTodo" :disabled="!newTodo" data-testid="btn-add-todo">
       Add
     </button>
@@ -14,14 +14,18 @@ const newTodo = ref("Sweet");
 export default {
   setup (props, context) {
 
+   const newTodoInput = ref(null)
+
     function addTodo() {
       context.emit('add', newTodo.value)
       newTodo.value = ""
+      newTodoInput.value.focus()
     }
 
     return {
       addTodo,
-      newTodo 
+      newTodo,
+      newTodoInput,
     }
   },
   emits: ['add']
