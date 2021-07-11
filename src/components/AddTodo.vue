@@ -1,7 +1,13 @@
 <template>
   <div class="new-todo">
-    <input autofocus v-model.trim="newTodo" ref="newTodoInput" data-testid="new-todo" />
-    <button @click="addTodo" :disabled="!newTodo" data-testid="btn-add-todo">
+    <input autofocus 
+           v-model.trim="newTodoText"
+           @keypress.enter="addTodo"
+           ref="newTodoInput" 
+           data-testid="new-todo" />
+    <button @click="addTodo" 
+            :disabled="!newTodoText" 
+            data-testid="btn-add-todo">
       Add
     </button>
   </div>
@@ -9,7 +15,7 @@
 
 <script>
 import { ref } from 'vue'
-const newTodo = ref("Sweet");
+const newTodoText = ref("Sweet");
 
 export default {
   setup (props, context) {
@@ -17,15 +23,15 @@ export default {
    const newTodoInput = ref(null)
 
     function addTodo() {
-      context.emit('add', newTodo.value)
-      newTodo.value = ""
+      context.emit('add', newTodoText.value)
+      newTodoText.value = ""
       newTodoInput.value.focus()
     }
 
     return {
       addTodo,
-      newTodo,
       newTodoInput,
+      newTodoText,
     }
   },
   emits: ['add']
