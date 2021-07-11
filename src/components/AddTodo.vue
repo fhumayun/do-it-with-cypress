@@ -1,7 +1,9 @@
 <template>
   <div class="new-todo">
-    <input v-model.trim="newTodo" />
-    <button @click="addTodo" :disabled="!newTodo">Add</button>
+    <input v-model.trim="newTodo" data-testid="new-todo" />
+    <button @click="addTodo" :disabled="!newTodo" data-testid="btn-add-todo">
+      Add
+    </button>
   </div>
 </template>
 

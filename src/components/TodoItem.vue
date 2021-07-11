@@ -1,7 +1,9 @@
 <template>
   <div>
-    <span :class="{ done: todo.done }">{{ todo.text }}</span>
-    <span v-if="todo.done"> ✓</span>
+    <span :class="{ done: todo.done }" :data-testid="`todo-${todo.id}-text`">
+      {{ todo.text }}
+    </span>
+    <span v-if="todo.done"  :data-testid="`todo-${todo.id}-done`"> ✓</span>
   </div>
 </template>
 
