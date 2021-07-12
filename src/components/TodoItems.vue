@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>TodoItems</h2>
+    <h2>To Do List</h2>
     <AddTodo @add="addTodo" />
     <div>
         <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />

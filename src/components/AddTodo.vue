@@ -15,7 +15,7 @@
 
 <script>
 import { ref } from 'vue'
-const newTodoText = ref("Sweet");
+const newTodoText = ref("");
 
 export default {
   setup (props, context) {

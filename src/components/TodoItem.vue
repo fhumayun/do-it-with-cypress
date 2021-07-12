@@ -1,9 +1,13 @@
 <template>
   <div>
-    <span :class="{ done: todo.done }" :data-testid="`todo-${todo.id}-text`">
+    <span class="todo-item" 
+          :class="{ done: todo.done }" 
+          @click="toggleTodo(todo)"
+          :data-testid="`todo-${todo.id}-text`">
       {{ todo.text }}
     </span>
-    <span v-if="todo.done"  :data-testid="`todo-${todo.id}-done`"> ✓</span>
+    <span v-if="todo.done"  
+          :data-testid="`todo-${todo.id}-done`"> ✓</span>
   </div>
 </template>
 
@@ -16,11 +20,22 @@ export default {
     }
   },
   setup () {
-    return {}
+    return {
+      toggleTodo(todo) {
+        todo.done = !todo.done;
+      },
+    }
   }
 }
 </script>
 
 <style scoped>
+.todo-item {
+  cursor: pointer;
+  line-height: 1.5em;
+}
 
+.done {
+  text-decoration: line-through;
+}
 </style>
