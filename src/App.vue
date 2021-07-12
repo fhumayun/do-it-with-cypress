@@ -1,5 +1,5 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img alt="Vue logo" src="./assets/pexels-breakingpic-3243.jpg" />
   <TodoItems />
 </template>
 
