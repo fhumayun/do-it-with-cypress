@@ -1,11 +1,13 @@
 <template>
   <div class="new-todo">
     <input autofocus 
+           class="input"
            v-model.trim="newTodoText"
            @keypress.enter="addTodo"
            ref="newTodoInput" 
            data-testid="new-todo" />
-    <button @click="addTodo" 
+    <button class="button" 
+            @click="addTodo" 
             :disabled="!newTodoText" 
             data-testid="btn-add-todo">
       Add
@@ -15,7 +17,7 @@
 
 <script>
 import { ref } from 'vue'
-const newTodoText = ref("");
+const newTodoText = ref("X");
 
 export default {
   setup (props, context) {
@@ -40,6 +42,38 @@ export default {
 
 <style scoped>
 .new-todo {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
   margin-bottom: 1em;
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  border-radius: 0;
+  border: 1px solid #ced4da;
+  color: #212529;
+  font-size: 1em;
+  line-height: 1.5;
+  padding: 0.5em 1em;
+  position: relative;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.button {
+  background-color: transparent;
+  border-radius: 0;
+  border: 1px solid #ced4da;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: -1px;
+  padding: 0.5em 1em;
+}
+
+.button:focus, .input:focus {
+  border: 1px solid #212529;
+  margin-left: 0;
+  outline: none;
 }
 </style>
