@@ -47,12 +47,13 @@ export default {
   flex-wrap: wrap;
   margin-bottom: 1em;
   position: relative;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .input {
+  width: 300px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0;
-  border: 1px solid #ced4da;
   color: #212529;
   font-size: 1em;
   line-height: 1.5;
@@ -63,8 +64,8 @@ export default {
 
 .button {
   background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0;
-  border: 1px solid #ced4da;
   cursor: pointer;
   font-size: 1em;
   margin-left: -1px;
@@ -72,7 +73,7 @@ export default {
 }
 
 .button:focus, .input:focus {
-  border: 1px solid #212529;
+  border: 1px solid rgba(0, 0, 0, 0.5);
   margin-left: 0;
   outline: none;
 }

@@ -2,7 +2,7 @@
   <div>
     <h2>To Do List</h2>
     <AddTodo @add="addTodo" />
-    <div>
+    <div class="todo-items">
         <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
     </div>
   </div>
@@ -35,5 +35,17 @@ export default {
 </script>
 
 <style scoped>
+.todo-items {
+  display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    border-radius: .25rem;
 
+    width: 400px;
+}
+
+.todo-items > :last-child {
+  margin-bottom: 0;
+}
 </style>
