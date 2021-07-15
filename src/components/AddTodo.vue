@@ -1,5 +1,5 @@
 <template>
-  <div class="new-todo">
+  <section class="new-todo" aria-label="New ToDo Item">
     <input autofocus 
            class="input"
            v-model.trim="newTodoText"
@@ -12,12 +12,12 @@
             data-testid="btn-add-todo">
       Add
     </button>
-  </div>
+  </section>
 </template>
 
 <script>
 import { ref } from 'vue'
-const newTodoText = ref("X");
+const newTodoText = ref("");
 
 export default {
   setup (props, context) {

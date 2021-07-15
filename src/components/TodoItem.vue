@@ -1,5 +1,5 @@
 <template>
-  <div class="todo-item">
+  <li class="todo-item">
     <span class="todo-item-text"
           :class="{ done: todo.done }" 
           @click="toggleTodo(todo)"
@@ -8,7 +8,7 @@
     </span>
     <span v-if="todo.done"  
           :data-testid="`todo-${todo.id}-done`"> ✓</span>
-  </div>
+  </li>
 </template>
 
 <script>
@@ -34,6 +34,8 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-top-width: 0;
   padding: .5rem 1rem;
+
+  list-style-type: none;
 }
 
 .todo-item:first-child {

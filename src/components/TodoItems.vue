@@ -1,11 +1,13 @@
 <template>
-  <div>
+  <main>
     <h2>To Do List</h2>
     <AddTodo @add="addTodo" />
-    <div class="todo-items">
-        <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
-    </div>
-  </div>
+    <section aria-label="ToDo Items">
+      <ul class="todo-items">
+          <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
+      </ul>
+    </section>
+  </main>
 </template>
 
 <script>
