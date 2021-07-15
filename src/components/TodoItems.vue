@@ -11,18 +11,36 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 import AddTodo from './AddTodo.vue'
 import TodoItem from './TodoItem.vue'
 
+function loadToDoItems() {
+  try {
+    const todoItems = localStorage.getItem('todoItems')
+    if (todoItems) {
+      return JSON.parse(todoItems)
+    }
+  }
+  catch (e) {
+    console.error(e);
+  }
+
+  return [
+    { id: 1, text: 'Learn Vue', done: true},
+    { id: 2, text: 'Learn Cypress', done: false },
+  ]
+}
 export default {
   components: { AddTodo, TodoItem },
   setup () {
-    const todos = ref([
-      { id: 1, text: 'Learn Vue', done: true},
-      { id: 2, text: 'Learn Cypress', done: false },
-    ]);
+    const todos = ref(loadToDoItems());
+
+    watch(todos.value, (value) => {
+      console.log('watch', value);
+      localStorage.setItem('todoItems', JSON.stringify(value))
+    })
 
     function addTodo(text) {
       todos.value.push({ id: Date.now(), text, done: false })
