@@ -13,7 +13,6 @@ jobs:
       - name: "Build with node"
         run: |
           npm install
-          npm run fetch
           npm run build --if-exists
 
       - name: "Deploy to Static Website on Azure Blob Storage"
