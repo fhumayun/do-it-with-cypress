@@ -44,9 +44,10 @@
         <input id="newsletter" type="checkbox" class="checkbox" v-model="user.newsletter" >
         <label class="label" for="newsletter">Newsletter</label>
       </div>
-      <pre>
-          {{JSON.stringify(user, null, 2)}}
-      </pre>
+      <div class="input-group">
+        <label class="label">User</label>
+        <textarea class="input" rows="10" readonly :value="JSON.stringify(user, null, 2)" />
+      </div>
     </form>
   </div>
 </template>
@@ -61,11 +62,11 @@ export default {
     const user = ref({
       firstName: 'Donald',
       lastName: 'Duck',
+      email: '',
+      happiness: 80,
+      gender: 'unknown',
       country: 'US',
       newsletter: false,
-      gender: 'unknown',
-      email: '',
-      happiness: 80
     })
 
     return {

@@ -46,6 +46,7 @@ export default {
   padding: 0.5em 1em;
   display: inline-block;
   width: 5em;
+  vertical-align: top;
 }
 
 .input {
