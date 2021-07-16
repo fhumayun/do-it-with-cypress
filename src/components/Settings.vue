@@ -15,6 +15,10 @@
         <input id="email" type="email" class="input" v-model="user.email" >
       </div>
       <div class="input-group">
+        <label class="label" for="happiness">Happiness</label>
+        <input id="happiness" type="range" class="range" v-model="user.happiness" >
+      </div>
+      <div class="input-group">
         <label class="label" for="gender">Gender</label>
         <span class="radio">
           <input id="male" type="radio"  v-model="user.gender" value="male" >
@@ -31,7 +35,7 @@
       </div>
       <div class="input-group">
         <label class="label" for="country">Country</label>
-        <select id="country" class="input" v-model="user.country">
+        <select id="country" class="input select" v-model="user.country">
             <option disabled value="">Please select a country</option>
             <option v-for="country in countries" :key="country.code" :value="country.code">{{country.name}}</option>
         </select>
@@ -40,6 +44,9 @@
         <input id="newsletter" type="checkbox" class="checkbox" v-model="user.newsletter" >
         <label class="label" for="newsletter">Newsletter</label>
       </div>
+      <pre>
+          {{JSON.stringify(user, null, 2)}}
+      </pre>
     </form>
   </div>
 </template>
@@ -57,7 +64,8 @@ export default {
       country: 'US',
       newsletter: false,
       gender: 'unknown',
-      email: ''
+      email: '',
+      happiness: 80
     })
 
     return {

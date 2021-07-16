@@ -68,6 +68,10 @@ export default {
   padding: 0.1em;
 }
 
+.range, .select {
+  width: calc(300px + 2em);
+}
+
 .button {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.125);
