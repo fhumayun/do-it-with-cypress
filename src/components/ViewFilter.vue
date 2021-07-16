@@ -8,6 +8,10 @@
       <input type="radio" id="all" value="all" v-model="view">
       <label for="all">All</label>
     </span>
+    <span class="button view">
+      <input type="radio" id="settings" value="settings" v-model="view">
+      <label for="settings">⚙️</label>
+    </span>
   </div>
 </template>
 

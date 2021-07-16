@@ -1,16 +1,19 @@
 <template>
   <img alt="To Do List logo" src="./assets/pexels-breakingpic-3243.jpg" />
   <ViewFilter v-model="view" />
-  <TodoItems :filter="view" />
+  <Settings v-if="view ==='settings'" />
+  <TodoItems v-else :filter="view" />
 </template>
 
 <script>
 import { ref } from 'vue'
+
+import Settings from './components/Settings.vue'
 import TodoItems from './components/TodoItems.vue'
 import ViewFilter from './components/ViewFilter.vue'
 
 export default {
-  components: { TodoItems, ViewFilter },
+  components: { Settings, TodoItems, ViewFilter },
   setup() {
     const view = ref('active')
 
@@ -32,6 +35,17 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #212529;
+}
+
+.input-group {
+  padding: 0.5em 0;
+}
+
+.label {
+  padding: 0.5em 1em;
+  display: inline-block;
+  width: 5em;
 }
 
 .input {
