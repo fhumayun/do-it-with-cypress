@@ -60,6 +60,14 @@ export default {
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.checkbox {
+  margin-left: 8.5em;
+}
+
+.radio > .label {
+  padding: 0.1em;
+}
+
 .button {
   background-color: transparent;
   border: 1px solid rgba(0, 0, 0, 0.125);
