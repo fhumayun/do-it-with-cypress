@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import { ref, watch } from 'vue'
+import { ref, watch, computed } from 'vue'
 
 import AddTodo from './AddTodo.vue'
 import TodoItem from './TodoItem.vue'
@@ -34,17 +34,30 @@ function loadToDoItems() {
 }
 export default {
   components: { AddTodo, TodoItem },
-  setup () {
-    const todos = ref(loadToDoItems());
+  props: {
+    filter: {
+        type: String,
+        required: true
+    }
+  },
+  setup(props) {
+    const allTodos = ref(loadToDoItems());
 
-    watch(todos.value, (value) => {
-      console.log('watch', value);
+    watch(allTodos.value, (value) => {
       localStorage.setItem('todoItems', JSON.stringify(value))
     })
 
     function addTodo(text) {
-      todos.value.push({ id: Date.now(), text, done: false })
+      allTodos.value.push({ id: Date.now(), text, done: false })
     }
+
+    const todos= computed(() => {
+      if (props.filter === "all") {
+        return allTodos.value
+      } else {
+        return allTodos.value.filter(todo => !todo.done)
+      }
+    })
 
     return {
       todos,

@@ -15,8 +15,8 @@
 export default {
   props: {
     todo: {
-        type:Object,
-        required:true
+      type: Object,
+      required: true
     }
   },
   setup () {
