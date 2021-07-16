@@ -11,6 +11,10 @@
         <input id="lastName" type="text" class="input" v-model="user.lastName" >
       </div>
       <div class="input-group">
+        <label class="label" for="email">E-Mail</label>
+        <input id="email" type="email" class="input" v-model="user.email" >
+      </div>
+      <div class="input-group">
         <label class="label" for="gender">Gender</label>
         <span class="radio">
           <input id="male" type="radio"  v-model="user.gender" value="male" >
@@ -52,7 +56,8 @@ export default {
       lastName: 'Duck',
       country: 'US',
       newsletter: false,
-      gender: 'unknown'
+      gender: 'unknown',
+      email: ''
     })
 
     return {
