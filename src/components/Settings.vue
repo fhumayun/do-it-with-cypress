@@ -2,22 +2,10 @@
   <div>
     <h2>Settings</h2>
     <form>
-      <div class="input-group">
-        <label class="label" for="firstName">Firstname</label>
-        <input id="firstName" type="text" class="input" v-model="user.firstName" >
-      </div>
-      <div class="input-group">
-        <label class="label" for="lastName">Lastname</label>
-        <input id="lastName" type="text" class="input" v-model="user.lastName" >
-      </div>
-      <div class="input-group">
-        <label class="label" for="email">E-Mail</label>
-        <input id="email" type="email" class="input" v-model="user.email" >
-      </div>
-      <div class="input-group">
-        <label class="label" for="happiness">Happiness</label>
-        <input id="happiness" type="range" class="range" v-model="user.happiness" >
-      </div>
+      <LabeledInput id="firstName" label="Firstname" v-model="user.firstName" />
+      <LabeledInput id="lastName5" label="Lastname" v-model="user.lastName" />
+      <LabeledInput id="email5" label="E-Mail" type="email" v-model="user.email" />
+      <LabeledInput class="range" id="happiness5" label="Happiness" type="range" v-model="user.happiness" />
       <div class="input-group">
         <label class="label" for="gender">Gender</label>
         <span class="radio">
@@ -55,9 +43,12 @@
 <script>
 import { ref } from 'vue'
 
+import LabeledInput from './LabeledInput.vue'
+
 import { countries } from './countries'
 
 export default {
+  components: { LabeledInput },
   setup () {
     const user = ref({
       firstName: 'Donald',
