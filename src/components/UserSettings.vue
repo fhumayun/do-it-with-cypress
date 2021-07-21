@@ -2,10 +2,10 @@
   <div>
     <h2>Settings</h2>
     <form>
-      <LabeledInput id="firstName" label="Firstname" v-model="user.firstName" />
-      <LabeledInput id="lastName5" label="Lastname" v-model="user.lastName" />
-      <LabeledInput id="email5" label="E-Mail" type="email" v-model="user.email" />
-      <LabeledInput class="range" id="happiness5" label="Happiness" type="range" v-model="user.happiness" />
+      <labeled-input id="firstName" label="Firstname" v-model="user.firstName" />
+      <labeled-input id="lastName5" label="Lastname" v-model="user.lastName" />
+      <labeled-input id="email5" label="E-Mail" type="email" v-model="user.email" />
+      <labeled-input class="range" id="happiness5" label="Happiness" type="range" v-model="user.happiness" />
       <div class="input-group">
         <label class="label" for="gender">Gender</label>
         <span class="radio">

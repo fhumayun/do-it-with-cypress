@@ -1,10 +1,10 @@
 <template>
   <main>
     <h2>To Do List</h2>
-    <AddTodo @add="addTodo" />
+    <add-todo @add="addTodo" />
     <section aria-label="ToDo Items">
       <ul class="todo-items">
-          <TodoItem v-for="todo in todos" :key="todo.id" :todo="todo" />
+          <todo-item v-for="todo in todos" :key="todo.id" :todo="todo" />
       </ul>
     </section>
   </main>
