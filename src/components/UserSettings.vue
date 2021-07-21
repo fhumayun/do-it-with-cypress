@@ -17,7 +17,7 @@
           <label class="label" for="female">Female</label>
         </span>
         <span class="radio">
-          <input id="unknown" type="radio"  v-model="user.gender" value="unknown" >
+          <input id="unknown" type="radio"  v-model="user.gender" value="" >
           <label class="label" for="unknown">Unknown</label>
         </span>
       </div>
@@ -55,7 +55,7 @@ export default {
       lastName: 'Duck',
       email: '',
       happiness: 80,
-      gender: 'unknown',
+      gender: '',
       country: 'US',
       newsletter: false,
     })
