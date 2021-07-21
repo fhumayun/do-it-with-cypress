@@ -1,19 +1,19 @@
 <template>
   <img alt="To Do List logo" src="./assets/pexels-breakingpic-3243.jpg" />
-  <view-filter v-model="view" />
-  <user-settings v-if="view ==='settings'" />
-  <todo-items v-else :filter="view" />
+  <ViewFilter v-model="view" />
+  <Settings v-if="view ==='settings'" />
+  <TodoItems v-else :filter="view" />
 </template>
 
 <script>
 import { ref } from 'vue'
 
-import UserSettings from './components/UserSettings.vue'
+import Settings from './components/Settings.vue'
 import TodoItems from './components/TodoItems.vue'
 import ViewFilter from './components/ViewFilter.vue'
 
 export default {
-  components: { UserSettings, TodoItems, ViewFilter },
+  components: { Settings, TodoItems, ViewFilter },
   setup() {
     const view = ref('active')
 
