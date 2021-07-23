@@ -3,8 +3,8 @@
     <h2>Settings</h2>
     <form>
       <LabeledInput id="firstName" label="Firstname" v-model="user.firstName" />
-      <LabeledInput id="lastName5" label="Lastname" v-model="user.lastName" />
-      <LabeledInput id="email5" label="E-Mail" type="email" v-model="user.email" />
+      <LabeledInput id="lastName" label="Lastname" v-model="user.lastName" />
+      <LabeledInput id="email" label="E-Mail" type="email" v-model="user.email" />
       <LabeledInput class="range" id="happiness5" label="Happiness" type="range" v-model="user.happiness" />
       <div class="input-group">
         <label class="label" for="gender">Gender</label>
