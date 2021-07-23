@@ -68,6 +68,7 @@ export default {
 
 .view input[type="radio"]:checked+label {
   border: 1px solid rgba(0, 0, 0, 0.5);
+  background-color: #CCC;
 }
 
 .view label {
