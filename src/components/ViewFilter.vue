@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="view">
     <span class="button view">
       <input type="radio" id="active" value="active" v-model="view">
       <label for="active">Active</label>
