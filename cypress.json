@@ -1,0 +1,9 @@
+{
+  "$schema": "https://on.cypress.io/cypress.schema.json",
+  "baseUrl": "https://do-it-with-cypress.azureedge.net",
+  "ignoreTestFiles": [
+    "**/1-getting-started/*", 
+    "**/2-advanced-examples/*"
+  ]  
+}
+  
