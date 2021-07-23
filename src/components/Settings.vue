@@ -33,8 +33,8 @@
         <label class="label" for="newsletter">Newsletter</label>
       </div>
       <div class="input-group">
-        <label class="label">User</label>
-        <textarea class="input" rows="10" readonly :value="JSON.stringify(user, null, 2)" />
+        <label class="label" for="result">Result</label>
+        <textarea id="result" class="input" rows="10" readonly :value="JSON.stringify(user, null, 2)" />
       </div>
     </form>
   </div>
