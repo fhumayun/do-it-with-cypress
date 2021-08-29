@@ -16,4 +16,23 @@ context('Settings', () => {
       .should('contain.value', '"lastName": "Sparrow",')
       .should('contain.value', '"email": "captain@black-pearl.ship",')
   })
+
+  it('Change the gender to female', () => {
+    cy.get('#result').should('contain.value', '"gender": ""')
+
+    cy.get('#female').check()
+
+    cy.get('#result').should('contain.value', '"gender": "female"')
+  })
+
+  it('Select the newsletter', () => {
+    cy.get('#result').should('contain.value', '"newsletter": false')
+    
+    cy.get('#newsletter').check()
+    cy.get('#result').should('contain.value', '"newsletter": true')
+    
+    cy.get('#newsletter').uncheck()
+    cy.get('#result').should('contain.value', '"newsletter": false')
+
+  })
 })
