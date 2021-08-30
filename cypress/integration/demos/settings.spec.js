@@ -33,6 +33,5 @@ context('Settings', () => {
     
     cy.get('#newsletter').uncheck()
     cy.get('#result').should('contain.value', '"newsletter": false')
-
   })
 })
