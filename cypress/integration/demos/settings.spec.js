@@ -34,4 +34,12 @@ context('Settings', () => {
     cy.get('#newsletter').uncheck()
     cy.get('#result').should('contain.value', '"newsletter": false')
   })
+
+  it('Change the country to NL', () => {
+    cy.get('#result').should('contain.value', '"country": "US"')
+
+    cy.get('#country').select('Netherlands')
+
+    cy.get('#result').should('contain.value', '"country": "NL"')
+  })
 })
