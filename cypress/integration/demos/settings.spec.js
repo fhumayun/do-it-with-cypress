@@ -42,4 +42,12 @@ context('Settings', () => {
 
     cy.get('#result').should('contain.value', '"country": "NL"')
   })
+
+  it('Change the happiness to 95%', () => {
+    cy.get('#result').should('contain.value', '"happiness": 80')
+
+    cy.get('#happiness').invoke('val', 95).trigger('input')
+
+    cy.get('#result').should('contain.value', '"happiness": 95')
+  })
 })
