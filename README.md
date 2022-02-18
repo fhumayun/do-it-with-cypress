@@ -1,1 +1,1 @@
-# do-it-with-cypress
+To do list practice with Cypress
